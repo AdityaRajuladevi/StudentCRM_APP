@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Student List{% endblock title %}
+
+{% block content %}
+    <div id="content-container" class="container p-none">
+        <div id="al-container" class="side-p">
+            <div id="al-control">
+                <h3 class="ad-mh">Student List
+                    {# Add Account Link #}
+                    <span class="pull-right">
+                        <a href="{% url 'student_new' %}"
+                           class="btn btn-link p-r-none color-red">+ Add New Student</a>
+                    </span>
+                </h3>
+                {# Account Search Form #}
+                <form action="{% url 'student_list' %}" method="get">
+                    <input id="al-search" type="text"
+                           name="student" value="{{ request.GET.student }}"
+                           class="form-control" />
+                    <input type="submit"
+                           value="Search" class="btn btn-success bg-color-btn" />
+                </form>
+            </div>
+            {# List of Students #}
+            <ul id="al-group" class="strip-list">
+                {% for student in students %}
+                    <li class="al-item">
+{#                    <h4 class="al-name">{{ student.name }}</h4>#}
+                        <a href="{{ student.get_absolute_url }}"><h4 class="al-name color-red">{{ student.name }}</h4></a>
+                        <span class="al-created">created on {{ student.created_on }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            {# Pagination Section #}
+        {% if is_paginated %}
+            <div id="al-paginate">
+                <ul class="strip-list al-pgnt-list">
+                    {% if page_obj.has_previous %}
+                        <li class="pull-left">
+                            <a href="{% url 'student_list' %}?page={{ page_obj.previous_page_number }}
+                            {% if request.GET.student %}&student={{ request.GET.student }}{% endif %}">Prev</a>
+                        </li>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                        <li class="pull-right">
+                            <a href="{% url 'student_list' %}?page={{ page_obj.next_page_number }}
+                            {% if request.GET.student %}&student={{ request.GET.student }}{% endif %}">Next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+{% endblock content %}

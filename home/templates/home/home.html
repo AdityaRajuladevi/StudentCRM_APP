@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {# Hero Section #}
+    <div class="mkt-s1">
+        <div class="mkt-s1-body container ">
+            <div class="row">
+                <h1 class="col-md-8">Every Student is Important!!</h1>
+            </div>
+            <div class="row">
+                <p class="col-md-8">A Student Content Management System(CMS) application that lets you track
+                all of your students academic and personal information .</p>
+            </div>
+            <div class="row">
+                {# First Signup Link #}
+                <a href="{% url 'register_new' %}"
+                   class="sign-up btn btn-success bg-color-btn">Sign Up Now for $15!
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {# Main Section #}
+    <div class="mkt-s2 container">
+        <h2 class="mkt-s2-h">Why Buy CMS Quick?</h2>
+        <div class="mkt-s2-body">
+            <div class="col-md-4 mkt-vp">
+                <img class="" src="{% static 'images/clock.png' %}"/>
+                <h5>Save Time</h5>
+                <p>By tracking your students in
+                an easy to use application you'll
+                be able to find them faster. Don't
+                waste time searching email, looking
+                at student files, or looking online -
+                just open CMS Quick!</p>
+            </div>
+            <div class="col-md-4 mkt-vp">
+                <img class="" src="{%   static 'images/lightbulb.png' %}"/>
+                <h5>Stay Current</h5>
+                <p>Keeping track of students details
+                is a critical part of serving them
+                right. Make sure you know what they want and when
+                they want it. Use CMS Quick to track all student
+                communications.</p>
+            </div>
+            <div class="col-md-4 mkt-vp">
+                <img class="" src="{% static 'images/dollar.png' %}"/>
+                <h5>Serve Better</h5>
+                <p>By tracking students and staying up
+                to date on their requirements you'll be
+                in a better position to provide services.</p>
+            </div>
+        </div>
+        {# Second Signup Link #}
+        <a href="{% url 'register_new' %}" class=" sgn-btm ">SIGN UP FOR ONLY $15</a>
+    </div>
+
+{% endblock content %}
