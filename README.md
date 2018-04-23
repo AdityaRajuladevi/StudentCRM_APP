@@ -41,8 +41,8 @@ We now need to install all the libraries and technologies that appear in the fil
 You should see a success message similar to this at the bottom of the Terminal window:
 
 ``` python
-Installing collected packages: Django, httplib2, psycopg2, requests, simplejson
-Successfully installed Django-1.9.5 httplib2-0.9.2 psycopg2-2.6.1 requests-2.10.0 simplejson-3.8.2
+Installing collected packages: pytz, Django, six, shortuuid, django-shortuuidfield, reverse
+Successfully installed Django-2.0.4 django-shortuuidfield-0.1.3 pytz-2018.4 reverse-0.1.0 shortuuid-0.5.0 six-1.11.0pud
 ```
 
 Admin Account Setup
@@ -57,19 +57,18 @@ Server Setup
 Woo hoo! You're now ready to run your server! Using the same Terminal tab from the steps we just completed for the admin, type the following command in your Terminal:
 
 ` (env) $ python manage.py runserver `
-
 If all went well, you'll receive a success message similar to this:
 
-``` python
+```
+python manage.py runserver
 Performing system checks...
 
 System check identified no issues (0 silenced).
-May 07, 2016 - 17:10:58
-Django version 1.9.5, using settings 'ig_miner.settings'
+April 23, 2018 - 00:31:59
+Django version 2.0.4, using settings 'studentcrm.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
-[07/May/2016 17:11:07] "GET / HTTP/1.1" 200 1439
-[07/May/2016 17:11:07] "GET /static/css/ig_miner_app.css HTTP/1.1" 200 682
+[23/Apr/2018 00:32:17] "GET / HTTP/1.1" 200 4700
 ```
 
 You can now visit the URL ` http://localhost:8000 ` in your web browser and you should see the navbar on the home page! There won't be any campaigns listed on the home page, because you haven't created any yet.
