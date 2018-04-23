@@ -1,6 +1,6 @@
 Student CRM allows a user to view & save information of student in a department/class.
 
-![Student_CRM Home](/ig_miner_app/static/chicago_bandits.png) 
+![Student_CRM Home](/static/studentcrm_home.png) 
 
 Table of Contents
 ----------
@@ -74,7 +74,7 @@ Quit the server with CONTROL-C.
 
 You can now visit the URL ` http://localhost:8000 ` in your web browser and you should see the navbar on the home page! There won't be any campaigns listed on the home page, because you haven't created any yet.
 
-![Student CRM Homepage](/StudentCRM_APP/static/studentcrm_home.png)
+![Student CRM Homepage](/static/studentcrm_home.png)
 
 
 Basic Usage
@@ -86,8 +86,8 @@ Basic Usage
 * The home page provides a link that will allow you to register to the CRM ` http://localhost:8000/signup/ `
 * You should provide all the required details to register the user
 
-### 3. Viewing your campaign details
-* Clicking on a campaign title on the home page will take you to that campaign's detail page: ` http://localhost:8000/campaign/<pk> `, where ` <pk> ` is the primary key (id) associated with that campaign in the database. Remember to use the pagination feature at the bottom of each page to access all of the result-photos!
+### 3. Viewing your Students List
+* Clicking on a students tab on the home page will take you to that student's list page: ` http://localhost:8000/list/ `,  Remember to use the pagination feature at the bottom of each page to access all of the students!
 
 
 Choices I Made
